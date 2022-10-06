@@ -15,6 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_Sprite_new_round(wins):
-	text = "Jugador 1: "+str(wins[0])+"  Juagador 2: "+str(wins[1])
 
+func _on_Sprite_switch_turn(player):
+	text= "Turno Actual: jugador "+str(player)

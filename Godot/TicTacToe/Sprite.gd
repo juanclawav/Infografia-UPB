@@ -13,15 +13,18 @@ var boton9
 var boton_restart
 var wins =[0,0]
 var label_wins
+var label_current
 
 signal bt_click(bt_name, player)
 signal btr_click(player)
 signal new_round(wins)
+signal switch_turn(player)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	player = 1
+	emit_signal("switch_turn",player)
 	boton1 = get_parent().get_node("Button")
 	boton1.text=""
 	boton2 = get_parent().get_node("Button2")
@@ -42,7 +45,6 @@ func _ready():
 	boton9.text=""
 	boton_restart = get_parent().get_node("ButtonRestart")
 	boton_restart.visible = not visible
-	label_wins = get_parent().get_node("Wins")
 	
 func check():
 	var won=false
@@ -116,6 +118,7 @@ func _on_Button_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 
 
 
@@ -127,6 +130,7 @@ func _on_Button2_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 
 
 func _on_Button3_button_up():
@@ -137,6 +141,7 @@ func _on_Button3_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 
 func _on_Button4_button_up():
 	if boton4.text=="":
@@ -146,6 +151,7 @@ func _on_Button4_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 
 func _on_Button5_button_up():
 	if boton5.text=="":
@@ -155,6 +161,7 @@ func _on_Button5_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 
 func _on_Button6_button_up():
 	if boton6.text=="":
@@ -164,6 +171,7 @@ func _on_Button6_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 	
 func _on_Button7_button_up():
 	if boton7.text=="":
@@ -173,6 +181,7 @@ func _on_Button7_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 
 func _on_Button8_button_up():
 	if boton8.text=="":
@@ -182,6 +191,7 @@ func _on_Button8_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 func _on_Button9_button_up():
 	if boton9.text=="":
 		emit_signal("bt_click",boton9.name,player)
@@ -190,6 +200,7 @@ func _on_Button9_button_up():
 			player=1
 		else:
 			player=2
+		emit_signal("switch_turn",player)
 
 func _on_ButtonRestart_button_up():
 	_ready()
