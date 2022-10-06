@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ItemList.gd" type="Script" id=1]
+[ext_resource path="res://Sprite.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[node name="Main" type="Node2D"]
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_left = 184.0
+margin_top = 57.0
+margin_right = 581.0
+margin_bottom = 452.0
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Bt_Bot_Right" type="Button" parent="ItemList"]
+margin_left = 264.0
+margin_top = 263.0
+margin_right = 392.0
+margin_bottom = 391.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Bot_Mid" type="Button" parent="ItemList"]
+margin_left = 133.0
+margin_top = 260.0
+margin_right = 261.0
+margin_bottom = 388.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Bot_Left" type="Button" parent="ItemList"]
+margin_left = 8.0
+margin_top = 263.0
+margin_right = 136.0
+margin_bottom = 391.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Mid_Right" type="Button" parent="ItemList"]
+margin_left = 264.0
+margin_top = 135.0
+margin_right = 392.0
+margin_bottom = 263.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Mid_Mid" type="Button" parent="ItemList"]
+margin_left = 136.0
+margin_top = 135.0
+margin_right = 264.0
+margin_bottom = 263.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Mid_Left" type="Button" parent="ItemList"]
+margin_left = 8.0
+margin_top = 135.0
+margin_right = 136.0
+margin_bottom = 263.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Top_Right" type="Button" parent="ItemList"]
+margin_left = 264.0
+margin_top = 4.0
+margin_right = 392.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Top_Mid" type="Button" parent="ItemList"]
+margin_left = 137.0
+margin_top = 4.0
+margin_right = 265.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Bt_Top_Left" type="Button" parent="ItemList"]
+margin_left = 5.0
+margin_top = 4.0
+margin_right = 133.0
+margin_bottom = 132.0
+rect_pivot_offset = Vector2( 145, 155 )
+
+[node name="Label_turno" type="Label" parent="."]
+margin_left = 743.0
+margin_top = 32.0
+margin_right = 925.0
+margin_bottom = 60.0
+text = "Turno de:"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 70, 88 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+
+[connection signal="item_activated" from="ItemList" to="Sprite" method="_on_ItemList_item_activated"]
