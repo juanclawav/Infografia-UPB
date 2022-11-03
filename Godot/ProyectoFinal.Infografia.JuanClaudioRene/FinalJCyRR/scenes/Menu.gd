@@ -1,4 +1,5 @@
 extends Control
+export var enemy_count=10
 func _ready():
 	$AudioStreamPlayer.play()
 func initialize(status):
@@ -26,3 +27,20 @@ func _on_Button_pressed():
 func _on_Button2_pressed():
 	var _return = get_tree().change_scene("res://scenes/WorldM.tscn")
 	queue_free()
+
+
+func _on_Button3_pressed():
+	
+	if $VBoxContainer/Button3.text=="DIFICULTAD: FACIL":
+		enemy_count=20
+		$VBoxContainer/Button3.text="DIFICULTAD: MEDIA"
+	else:
+		if $VBoxContainer/Button3.text=="DIFICULTAD: MEDIA":
+			enemy_count=30
+			$VBoxContainer/Button3.text="DIFICULTAD: DIFICIL"
+		else:
+			if $VBoxContainer/Button3.text=="DIFICULTAD: DIFICIL":
+				enemy_count=10
+				$VBoxContainer/Button3.text="DIFICULTAD: FACIL"
+				
+			
